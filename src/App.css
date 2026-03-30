@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #312e81 100%);
+  color: #ffffff;
+}
+
+.app {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 24px 60px;
+}
+
+/* Background glow */
+.background-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.shape-one {
+  width: 320px;
+  height: 320px;
+  background: #7c3aed;
+  top: -80px;
+  left: -80px;
+}
+
+.shape-two {
+  width: 360px;
+  height: 360px;
+  background: #06b6d4;
+  bottom: -100px;
+  right: -100px;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.hero p {
+  max-width: 720px;
+  margin: 16px auto 0;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Layout */
+.dashboard {
+  position: relative;
+  z-index: 1;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 28px;
+  padding: 28px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.card-header h2 {
+  margin: 8px 0 0;
+  font-size: 30px;
+}
+
+.card-tag {
+  font-size: 13px;
+  color: #c4b5fd;
+  font-weight: 700;
+}
+
+.card-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* Form */
+.form-label {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.textarea {
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  padding: 16px;
+  min-height: 140px;
+}
+
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.btn {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  color: white;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Upload */
+.upload-box {
+  padding: 22px;
+  border-radius: 20px;
+  border: 1px dashed rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.custom-upload-btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.file-note {
+  margin-top: 12px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+/* Results */
+.result-box {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.result-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #c4b5fd;
+}
+
+.preview-image {
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 14px;
+}
+
+.analysis-list {
+  margin-top: 12px;
+  padding-left: 18px;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+}
